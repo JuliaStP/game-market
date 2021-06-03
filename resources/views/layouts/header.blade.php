@@ -1,5 +1,5 @@
 <header class="main-header">
-    <div class="logotype-container"><a href="/" class="logotype-link"><img src="/img/logo.png" alt="Логотип"></a></div>
+    <div class="logotype-container"><a href="/" class="logotype-link"><img src="/img/logo.png" alt="Logo"></a></div>
     <nav class="main-navigation">
         <ul class="nav-list">
             <li class="nav-list__item"><a href="{{ route('home') }}" class="nav-list__item__link">Main</a></li>
@@ -18,17 +18,17 @@
                 <div class="payment-basket__status__icon-block"><a href="{{ route('order.current') }}" class="payment-basket__status__icon-block__link"><i class="fa fa-shopping-basket"></i></a></div>
                 <div class="payment-basket__status__basket"><span class="payment-basket__status__basket-value">
                         {{ $basketGoods }}
-                    </span><span class="payment-basket__status__basket-value-descr">товаров</span></div>
+                    </span><span class="payment-basket__status__basket-value-descr">items</span></div>
             </div>
         </div>
         <div class="authorization-block">
             @if(Auth::user())
-                Hello, {{ Auth::user()->name }}
-                <a href="{{ route('logout') }}"
-                   class="authorization-block__link"
-                   onclick="event.preventDefault();
+                <div style="font-family: PT_Sans">Hello, {{ Auth::user()->name }}
+                    <a href="{{ route('logout') }}"
+                       class="authorization-block__link"
+                       onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();">
-                    Log out</a>
+                        Log out</a></div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
