@@ -1,2 +1,2 @@
-web: php public/index.php public/
+web: php -S public/
 
